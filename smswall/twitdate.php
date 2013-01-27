@@ -4,11 +4,11 @@
 function Timesince($original,$delay) {
     // array of time period chunks
     $chunks = array(
-	array(60 * 60 * 24 * 365 , 'an'),
-	array(60 * 60 * 24 * 30 , 'mois'),
-	array(60 * 60 * 24 * 7, 'semaine'),
-	array(60 * 60 * 24 , 'jour'),
-	array(60 * 60 , 'heure'),
+	array(60 * 60 * 24 * 365 , 'jaar'),
+	array(60 * 60 * 24 * 30 , 'maand'),
+	array(60 * 60 * 24 * 7, 'week'),
+	array(60 * 60 * 24 , 'dag'),
+	array(60 * 60 , 'uur'),
 	array(60 , 'min'),
 	array(1 , 'sec'),
     );
@@ -32,7 +32,9 @@ function Timesince($original,$delay) {
     }
 	
     //$pluriel = ($name != "mois") ? 's' : '';
-    $pluriel = ($name == "min" || $name == "sec" || $name == "mois") ? '' : 's';
+    $pluriel = ($name == "min" || $name == "sec") ? '' : 'en';
+	$name = ($count > 1 && $name == "jaar") ? 'jar' : "$name";
+	$name = ($count > 1 && $name == "uur") ? 'ur' : "$name";
     $print = ($count == 1) ? '1 '.$name : "$count {$name}$pluriel";
 
 	
@@ -44,7 +46,9 @@ function Timesince($original,$delay) {
 		// add second item if its greater than 0
 		if (($count2 = floor(($since - ($seconds * $count)) / $seconds2)) != 0) {
 			//$pluriel2 = ($name2 != "mois") ? 's' : '';
-			$pluriel2 = ($name2 == "min" || $name2 == "sec" || $name2 == "mois") ? '' : 's';
+			$pluriel2 = ($name2 == "min" || $name2 == "sec") ? '' : 'en';
+			$name2 = ($count2 > 1 && $name2 == "jaar") ? 'jar' : "$name2";
+			$name2 = ($count2 > 1 && $name2 == "uur") ? 'ur' : "$name2";
 		    $print .= ($count2 == 1) ? ', 1 '.$name2 : " $count2 {$name2}$pluriel2";
 		}
     }

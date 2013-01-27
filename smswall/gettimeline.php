@@ -39,6 +39,10 @@ foreach($ary_old as $old){
 				$item['pseudo'] = $item['title'];
 				$item['title'] = strip_tags($item['description']);
 				$item['avatarbig'] = "";
+			}else if($item['link'] == "ORG"){
+				$item['pseudo'] = $item['title'];
+				$item['title'] = strip_tags($item['description']);
+				$item['avatarbig'] = "";
 			}
 		}
 		

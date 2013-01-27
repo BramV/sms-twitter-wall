@@ -178,6 +178,10 @@ $(document).ready(function() {
 						pseudo =  twit.pseudo;
 						avatar = '<img src="../media/default_sms.png" class="avatar" />';
 						break;
+					case 'ORG':
+						pseudo = twit.pseudo;
+						avatar = '<img src="../media/default_org.png" class="avatar" />';
+						break;
 					case 'WEB':
 						pseudo = twit.pseudo;
 						avatar = '<img src="../media/default_www.png" class="avatar" />';

@@ -118,6 +118,9 @@ $(document).ready(function() {
 						case 'SMS':
 							avatar = '<img src="media/default_sms.png" class="avatar" />';
 							break;
+						case 'ORG':
+							avatar = '<img src="media/default_org.png" class="avatar" />';
+							break;
 						case 'WEB':
 							avatar = '<img src="media/default_www.png" class="avatar" />';
 							break;

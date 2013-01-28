@@ -127,6 +127,9 @@ $(document).ready(function() {
 					}
 				}else{
 					avatar = '';
+	                if(twit.pseudo == '&of') {
+	                    avatar = '<img src="media/default_enof.png" class="avatar" />';
+	                }
 					twit.avatarbig = '';
 				}
 				
@@ -141,8 +144,13 @@ $(document).ready(function() {
 				
 				
 				// Construction du li pour chaque tweets
+                var clsOrga = "";
+                if(twit.pseudo == '&of') {
+                    clsOrga = " highlightedTweet";
+                }
+				
 				$('#containerMsg').append(
-					'<li class="' + twit.etat + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
+                   		'<li class="' + twit.etat + clsOrga + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
 						+ avatar
 						+ '<span class="author">' + twit.pseudo + '</span>'
 						+ '<span class="textMsg"> ' + stripslashes(twit.title) + ' - </span>'

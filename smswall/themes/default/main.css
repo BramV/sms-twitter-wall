@@ -147,11 +147,15 @@ a:hover{
 	margin-bottom: 8px;
 	padding: 8px;
 	border: 1px solid #eeeeee;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	line-height: 22px;
 	font-size: 18px;
 	-moz-box-shadow: 0 0 4px rgba(100, 100, 100, 1);
 	-webkit-box-shadow: 0 0 4px rgba(100, 100, 100, 1);
+}
+.highlightedTweet{
+	background-color: #800080;
+	color: #00FF00;
 }
 
 	#splash {

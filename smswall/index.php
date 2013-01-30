@@ -94,6 +94,8 @@ $(document).ready(function() {
 		var alertPseudo;
 		var alertTitle;
 		var alertTwitdate;
+		var alertclassAuthor;
+		var alertclassTime;
 		var etatBulle;
 		var idBulle;
 		
@@ -127,8 +129,13 @@ $(document).ready(function() {
 					}
 				}else{
 					avatar = '';
+					alertclassAuthor = 'author';
+					alertclassTime ='time';
+					
 	                if(twit.pseudo == '&of') {
 	                    avatar = '<img src="media/default_enof.png" class="avatar" />';
+						alertclassTime = 'time highlightedTime';
+						alertclassAuthor = 'author highlightedAuthor';
 	                }
 					twit.avatarbig = '';
 				}
@@ -152,9 +159,9 @@ $(document).ready(function() {
 				$('#containerMsg').append(
                    		'<li class="' + twit.etat + clsOrga + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
 						+ avatar
-						+ '<span class="author">' + twit.pseudo + '</span>'
+						+ '<span class="'+ alertclassAuthor + '">' + twit.pseudo + '</span>'
 						+ '<span class="textMsg"> ' + stripslashes(twit.title) + ' - </span>'
-						+ '<span class="time">' + twit.twitdate + '</span>'
+						+ '<span class="'+ alertclassTime + '">' + twit.twitdate + '</span>'
 						+ '<div style="clear: both;"></div>'
 					+ '</li>');
 				
@@ -206,16 +213,16 @@ $(document).ready(function() {
 			para.queue(
 				"testQueue",
 				function( next ){
-					
+
 					// test à l'arrache : plus élégant de bosser avec data.twits[0].pseudo
 					if(alertPseudo){
 						$.post('admin/update_bul.php', { id: idBulle, switchBul: '0'}, function(data) {
 							$("#bulleMsg").html(
 								'<div id="splash" class="animOpen" style="display: none;" >'
 									+ alertAvatar
-									+ '<span class="author">' + alertPseudo + '</span>'
+									+ '<span class="'+ alertclassAuthor + '">' + alertPseudo + '</span>'
 									+ '<span class="textMsg"> ' + stripslashes(alertTitle) + ' - </span>'
-									+ '<span class="time">' + alertTwitdate + '</span>'
+									+ '<span class="'+ alertclassTime + '">' + alertTwitdate + '</span>'
 									+ '<div style="clear: both;"></div>'
 								+ '</div>'
 							);

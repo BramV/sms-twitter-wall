@@ -180,7 +180,11 @@ $(document).ready(function() {
 						break;
 					case 'WEB':
 						pseudo = twit.pseudo;
-						avatar = '<img src="../media/default_www.png" class="avatar" />';
+						if(twit.pseudo == '&of'){
+							avatar = '<img src="../media/default_enof.png" class="avatar" />';
+						}else{
+							avatar = '<img src="../media/default_www.png" class="avatar" />';
+						}
 						break;
 					default:
 						pseudo = '<a href="'+twit.link+'" target="_blank">' + twit.pseudo + '</a>';

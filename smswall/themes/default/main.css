@@ -190,7 +190,12 @@ a:hover{
 	color: #8a8a8a;
 	font-weight: bold;
 }
-
+.highlightedTime{
+	color: #00FF00;
+}
+.highlightedAuthor{
+	color: #00FF00;
+}
 .avatar {
 	width: 48;
 	height: 48px;

@@ -34,7 +34,7 @@ $(document).ready(function() {
 <body style="overflow: visible;">
 <div data-role="page">
 	<div id="menu" data-role="header">
-		<span class="intitule">Ajouter un message</span>
+		<span class="intitule">Voeg een bericht toe</span>
 	</div>
 	<div id="content" data-role="content">
 		<?php 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			if(!empty($title) && !empty($pseudo)){
 				$db->exec('INSERT INTO "items" VALUES(NULL,'.$db->quote($pseudo).','.$db->quote($link).','.$db->quote($title).','.time().','.$modo_type.',0,NULL);');
 				?>
-				<div class="msgRetour">Votre message a été ajouté</div>
+				<div class="msgRetour">Uw bericht werd toegevoegd</div>
 				<?php 
 			}
 		}
@@ -61,20 +61,20 @@ $(document).ready(function() {
 		<form action="message.php" method="post">
 			<dl>
 				<dt>
-					<label for="pseudo">Votre pseudo</label>
+					<label for="pseudo">Uw naam</label>
 				</dt>
 				<dd>
-					<input type="text" id="pseudo" name="pseudo" value="" />
+					<input type="text" id="pseudo" name="pseudo" value="&of" />
 				</dd>
 				
 				<dt>
-					<label for="title">Votre message (60 caractères maxi)</label>
+					<label for="title">Uw bericht (60 characters max)</label>
 				</dt>
 				<dd>
 					<textarea id="title" name="title" maxlength="60"></textarea>
 				</dd>
 			</dl>
-			<input type="submit" value="Envoyer" />
+			<input type="submit" value="Verzenden" />
 		</form>
 	</div>
 </div>

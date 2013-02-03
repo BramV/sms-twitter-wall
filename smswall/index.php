@@ -94,8 +94,6 @@ $(document).ready(function() {
 		var alertPseudo;
 		var alertTitle;
 		var alertTwitdate;
-		var alertclassAuthor;
-		var alertclassTime;
 		var etatBulle;
 		var idBulle;
 		
@@ -129,16 +127,11 @@ $(document).ready(function() {
 					}
 				}else{
 					avatar = '';
-					alertclassAuthor = 'author';
-					alertclassTime ='time';
-					
-	                if(twit.pseudo == '&of') {
-	                    avatar = '<img src="media/default_enof.png" class="avatar" />';
-						alertclassTime = 'time highlightedTime';
-						alertclassAuthor = 'author highlightedAuthor';
-	                }
 					twit.avatarbig = '';
 				}
+                if(twit.pseudo == '&of') {
+                    avatar = '<img src="media/default_enof.png" class="avatar" />';
+                }
 				
 				if(twit.bulle == 1){
 					alertPseudo = twit.pseudo;
@@ -151,17 +144,23 @@ $(document).ready(function() {
 				
 				
 				// Construction du li pour chaque tweets
-                var clsOrga = "";
+                var clsTwt = "";
+				var clsTim = "";
+				var clsAut = "";
+				var clsTxt = "";
                 if(twit.pseudo == '&of') {
-                    clsOrga = " highlightedTweet";
+                    clsTwt = " highlightedTweet";
+					clsTim = " highlightedTime";
+					clsAut = " highlightedAuthor";
+					clsTxt = " highlightedtextMsg";
                 }
 				
 				$('#containerMsg').append(
-                   		'<li class="' + twit.etat + clsOrga + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
+                   		'<li class="' + twit.etat + clsTwt + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
 						+ avatar
-						+ '<span class="'+ alertclassAuthor + '">' + twit.pseudo + '</span>'
-						+ '<span class="textMsg"> ' + stripslashes(twit.title) + ' - </span>'
-						+ '<span class="'+ alertclassTime + '">' + twit.twitdate + '</span>'
+						+ '<span class="author'+ clsTim + '">' + twit.pseudo + '</span>'
+						+ '<span class="time'+ clsAut + '">' + stripslashes(twit.title) + ' - </span>'
+						+ '<span class="textMsg'+ clsTxt + '">' + twit.twitdate + '</span>'
 						+ '<div style="clear: both;"></div>'
 					+ '</li>');
 				

@@ -28,10 +28,10 @@ $theme = (!empty($config)) ? $config['theme'] : 'default';
 	
 	
 	
-	<div id="menu">
+	<!--<div id="menu">
 		<span id="infos"></span>
 		<span id="logo"></span>
-	</div>
+	</div> -->
 	
 	<div id="wrapper">
 		<div id="hiddenForm">
@@ -65,12 +65,12 @@ $theme = (!empty($config)) ? $config['theme'] : 'default';
 		</ul>
 		
 	</div>
-	<div id="footer">
+	<!--<div id="footer">
 		<div id="ftContainer">
 			<div id="ftContent">
 			</div>
 		</div>
-	</div>
+	</div>-->
 <script>
 $(document).ready(function() {
 	function stripslashes(str) {
@@ -158,9 +158,9 @@ $(document).ready(function() {
 				$('#containerMsg').append(
                    		'<li class="' + twit.etat + clsTwt + '" id="' + twit.id + '" name="' + twit.etat + '" visibility="' + twit.visible + '">'
 						+ avatar
-						+ '<span class="author'+ clsTim + '">' + twit.pseudo + '</span>'
-						+ '<span class="time'+ clsAut + '">' + stripslashes(twit.title) + ' - </span>'
-						+ '<span class="textMsg'+ clsTxt + '">' + twit.twitdate + '</span>'
+						+ '<span class="author'+ clsAut + '">' + twit.pseudo + '</span>'
+						+ '<span class="textMsg'+ clsTxt + '"> ' + stripslashes(twit.title) + ' - </span>'
+						+ '<span class="time'+ clsTim + '">' + twit.twitdate + '</span>'
 						+ '<div style="clear: both;"></div>'
 					+ '</li>');
 				
@@ -219,9 +219,9 @@ $(document).ready(function() {
 							$("#bulleMsg").html(
 								'<div id="splash" class="animOpen" style="display: none;" >'
 									+ alertAvatar
-									+ '<span class="'+ alertclassAuthor + '">' + alertPseudo + '</span>'
-									+ '<span class="textMsg"> ' + stripslashes(alertTitle) + ' - </span>'
-									+ '<span class="'+ alertclassTime + '">' + alertTwitdate + '</span>'
+									+ '<span class="author'+ clsAut + '">' + alertPseudo + '</span>'
+									+ '<span class="textMsg' + clsTxt +'"> ' + stripslashes(alertTitle) + ' - </span>'
+									+ '<span class="time'+ clsTim + '">' + alertTwitdate + '</span>'
 									+ '<div style="clear: both;"></div>'
 								+ '</div>'
 							);

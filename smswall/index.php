@@ -28,10 +28,10 @@ $theme = (!empty($config)) ? $config['theme'] : 'default';
 	
 	
 	
-	<!--<div id="menu">
-		<span id="infos"></span>
+	<div id="menu">
+		<span id="infos">SMS naar 0491 90 10 06</span>
 		<span id="logo"></span>
-	</div> -->
+	</div>
 	
 	<div id="wrapper">
 		<div id="hiddenForm">

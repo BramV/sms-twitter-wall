@@ -64,7 +64,7 @@ $(document).ready(function() {
 					<label for="pseudo">Uw naam</label>
 				</dt>
 				<dd>
-					<input type="text" id="pseudo" name="pseudo" value="&of" />
+					<input type="text" id="pseudo" name="pseudo" value="LBK" />
 				</dd>
 				
 				<dt>

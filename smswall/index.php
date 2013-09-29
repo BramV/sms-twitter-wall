@@ -129,8 +129,8 @@ $(document).ready(function() {
 					avatar = '';
 					twit.avatarbig = '';
 				}
-                if(twit.pseudo == '&of') {
-                    avatar = '<img src="media/default_enof.png" class="avatar" />';
+                if(twit.pseudo == 'LBK') {
+                    avatar = '<img src="media/default_LBK.png" class="avatar" />';
                 }
 				
 				if(twit.bulle == 1){

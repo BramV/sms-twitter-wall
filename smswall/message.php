@@ -61,10 +61,10 @@ $(document).ready(function() {
 		<form action="message.php" method="post">
 			<dl>
 				<dt>
-					<label for="pseudo">Uw naam</label>
+					<label for="pseudo"></label>
 				</dt>
 				<dd>
-					<input type="text" id="pseudo" name="pseudo" value="&of" />
+					<input type="hidden" id="pseudo" name="pseudo" value="&of" />
 				</dd>
 				
 				<dt>

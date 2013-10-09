@@ -4,11 +4,7 @@ include('init_db.php');
 
 $title = "";
 $link = "SMS";
-$link2 = $_GET['link']
-if($link == 'enof'){
-	$link = '&of';
-}
-$content = strip_tags($_GET['text']);
+$content = strip_tags($_POST['text']);
 $timestamp = time();
 $modo_type = $config['modo_type'];
 $etat_bulle = $config['bulle'];

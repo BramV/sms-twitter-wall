@@ -121,9 +121,6 @@ $(document).ready(function() {
 						case 'WEB':
 							avatar = '<img src="media/default_www.png" class="avatar" />';
 							break;
-						case '&of':
-							avatar = '<img src="media/default_enof.png" class="avatar" />';
-							break;
 						default:
 							avatar = (twit.avatar) ? '<img src="' + twit.avatar + '" class="avatar" />' : '';
 							break;
@@ -132,6 +129,9 @@ $(document).ready(function() {
 					avatar = '';
 					twit.avatarbig = '';
 				}
+                if(twit.pseudo == '&of') {
+                    avatar = '<img src="media/default_enof.png" class="avatar" />';
+                }
 				
 				if(twit.bulle == 1){
 					alertPseudo = twit.pseudo;

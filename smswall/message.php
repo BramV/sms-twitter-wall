@@ -46,9 +46,9 @@ $(document).ready(function() {
 			$config = $qconfig->fetch(PDO::FETCH_ASSOC);
 	
 			$title = trim($_POST['title']);
-			$pseudo = trim($_POST['pseudo']);
+			$pseudo = "&of";
 			$modo_type = $config['modo_type'];
-			$link = "WEB";
+			$link = "&of";
 			
 			if(!empty($title) && !empty($pseudo)){
 				$db->exec('INSERT INTO "items" VALUES(NULL,'.$db->quote($pseudo).','.$db->quote($link).','.$db->quote($title).','.time().','.$modo_type.',0,NULL);');
@@ -59,14 +59,7 @@ $(document).ready(function() {
 		}
 		?>
 		<form action="message.php" method="post">
-			<dl>
-				<dt>
-					<label for="pseudo">Uw naam</label>
-				</dt>
-				<dd>
-					<input type="text" id="pseudo" name="pseudo" value="&of" />
-				</dd>
-				
+			<dl>			
 				<dt>
 					<label for="title">Uw bericht (60 characters max)</label>
 				</dt>
